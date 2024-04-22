@@ -15,10 +15,8 @@ SELECT
     sales.bbl
 FROM {{ ref('nyc_sales_jan_feb_2019') }} sales
 JOIN read_postgres(  
-    'host=pg.demo.glaredb.com port=5432 user=demo password=demo database=postgres',
+    'postgresql://demo:demo@pg.demo.glaredb.com:5432/postgres',
     'public',
-    'users'
-)
-
-my_postgres.public.borough_lookup lookup
+    'borough_lookup'
+) lookup
 ON sales.borough = lookup.borough_id
