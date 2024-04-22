@@ -1,0 +1,10 @@
+
+version: 2
+
+sources:
+  - name: glaredb
+    schema: public
+    database: default
+    tables: 
+      - name: dbt_nyc_sales
+
