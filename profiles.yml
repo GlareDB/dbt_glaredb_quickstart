@@ -1,0 +1,12 @@
+dbt_glaredb_quickstart:
+  outputs:
+    dev:
+      dbname: empty_rain
+      host: o_vAIOmhx.proxy.qa.glaredb.com
+      pass: "{{ env_var('GLAREDB_PASSWORD')}}"
+      port: 6543
+      schema: public
+      threads: 1
+      type: postgres
+      user: 2g7nT1ShV4zA
+  target: dev

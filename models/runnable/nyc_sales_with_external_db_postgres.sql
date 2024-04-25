@@ -1,7 +1,7 @@
 {{ config(
     materialized='view',
     pre_hook=[
-    "CREATE EXTERNAL DATABASE my_postgres
+    "CREATE EXTERNAL DATABASE IF NOT EXISTS my_postgres
     FROM postgres
     OPTIONS(
         connection_string = 'postgresql://demo:demo@pg.demo.glaredb.com:5432/postgres'
