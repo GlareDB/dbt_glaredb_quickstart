@@ -21,5 +21,5 @@ SELECT
     sales.bin,
     sales.bbl
 FROM {{ ref('nyc_sales_jan_feb_2019') }} sales
-JOIN my_postgres.public.borough_lookup lookup
+JOIN {{ source('my_postgres', 'borough_lookup') }} lookup
 ON sales.borough = lookup.borough_id

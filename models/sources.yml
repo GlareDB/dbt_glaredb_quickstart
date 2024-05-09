@@ -1,10 +1,14 @@
-
 version: 2
 
 sources:
   - name: glaredb
     schema: public
-    database: default
+    database: default # this is the default GlareDB database and should be used for all non-external sources
     tables: 
       - name: dbt_nyc_sales
+  - name: my_postgres # external databases in GlareDB can be referenced as sources like this
+    schema: public
+    database: my_postgres
+    tables:
+      - name: borough_lookup
 
