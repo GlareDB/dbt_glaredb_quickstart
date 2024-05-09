@@ -1,0 +1,144 @@
+
+version: 2
+
+sources:
+  - name: glaredb
+    database: default # this is the default GlareDB database and should be used for all non-external sources
+    schema: public
+    tables:
+      - name: dbt_nyc_sales
+        columns:
+          - name: borough
+            data_type: utf8
+          - name: neighborhood
+            data_type: utf8
+          - name: building_class_category
+            data_type: utf8
+          - name: tax_class_as_of_final_roll
+            data_type: utf8
+          - name: block
+            data_type: int64
+          - name: lot
+            data_type: int64
+          - name: ease-ment
+            data_type: float64
+          - name: building_class_as_of_final_roll
+            data_type: utf8
+          - name: address
+            data_type: utf8
+          - name: apartment_number
+            data_type: utf8
+          - name: zip_code
+            data_type: float64
+          - name: residential_units
+            data_type: float64
+          - name: commercial_units
+            data_type: float64
+          - name: total_units
+            data_type: float64
+          - name: land_square_feet
+            data_type: utf8
+          - name: gross_square_feet
+            data_type: utf8
+          - name: year_built
+            data_type: float64
+          - name: tax_class_at_time_of_sale
+            data_type: int64
+          - name: building_class_at_time_of_sale
+            data_type: utf8
+          - name: sale_price
+            data_type: int64
+          - name: sale_date
+            data_type: timestamp(nanosecond, none)
+          - name: latitude
+            data_type: float64
+          - name: longitude
+            data_type: float64
+          - name: community_board
+            data_type: float64
+          - name: council_district
+            data_type: float64
+          - name: census_tract
+            data_type: float64
+          - name: bin
+            data_type: float64
+          - name: bbl
+            data_type: float64
+          - name: nta
+            data_type: utf8
+          - name: census_tract_2020
+            data_type: float64
+          - name: nta_code
+            data_type: utf8
+          - name: sale_day
+            data_type: int32
+  - name: my_postgres # external databases in GlareDB can be referenced as sources like this
+    schema: public
+    database: my_postgres
+    tables:
+      - name: borough_lookup
+        columns:
+            - name: borough_name
+              data_type: utf8
+            - name: borough_id
+              data_type: float64
+
+models:
+  - name: a_stg_dbt_nyc_sales
+    description: ""
+    columns:
+      - name: borough
+        data_type: utf8
+        description: ""
+      - name: neighborhood
+        data_type: utf8
+        description: ""
+      - name: building_class_category
+        data_type: utf8
+        description: ""
+      - name: residential_units
+        data_type: float64
+        description: ""
+      - name: commercial_units
+        data_type: float64
+        description: ""
+      - name: total_units
+        data_type: float64
+        description: ""
+      - name: land_square_feet
+        data_type: utf8
+        description: ""
+      - name: gross_square_feet
+        data_type: utf8
+        description: ""
+      - name: year_built
+        data_type: float64
+        description: ""
+      - name: sale_price
+        data_type: int64
+        description: ""
+      - name: sale_date
+        data_type: timestamp(nanosecond, none)
+        description: ""
+      - name: latitude
+        data_type: float64
+        description: ""
+      - name: longitude
+        data_type: float64
+        description: ""
+      - name: bin
+        data_type: float64
+        description: ""
+      - name: bbl
+        data_type: float64
+        description: ""
+  - name: b_nyc_sales_jan_feb_2019
+    description: ""
+    columns: []
+  - name: c_nyc_sales_with_read_postgres
+    description: ""
+    columns: []
+  - name: c_nyc_sales_with_external_db_postgres
+    description: ""
+    columns: []
+  

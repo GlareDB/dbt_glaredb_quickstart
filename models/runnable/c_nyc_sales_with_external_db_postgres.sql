@@ -20,6 +20,6 @@ SELECT
     sales.longitude,
     sales.bin,
     sales.bbl
-FROM {{ ref('nyc_sales_jan_feb_2019') }} sales
+FROM {{ ref('b_nyc_sales_jan_feb_2019') }} sales
 JOIN {{ source('my_postgres', 'borough_lookup') }} lookup
 ON sales.borough = lookup.borough_id

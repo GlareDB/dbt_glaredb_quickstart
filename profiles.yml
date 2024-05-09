@@ -2,7 +2,7 @@ dbt_glaredb_quickstart:
   outputs:
     dev:
       dbname: o_vAIOmhx/empty_rain
-      host: proxy.qa.glaredb.com
+      host: proxy.glaredb.com
       pass: "{{ env_var('GLAREDB_PASSWORD')}}"
       port: 6543
       schema: public

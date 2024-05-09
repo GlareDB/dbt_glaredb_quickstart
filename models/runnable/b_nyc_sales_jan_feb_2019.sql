@@ -2,7 +2,7 @@
     materialized='view'
 ) }}
 
-SELECT * FROM {{ ref('staging_dbt_nyc_sales')}}
+SELECT * FROM {{ ref('a_stg_dbt_nyc_sales')}}
 UNION
 SELECT
     borough,

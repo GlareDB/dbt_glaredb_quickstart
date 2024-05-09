@@ -13,7 +13,7 @@ SELECT
     sales.longitude,
     sales.bin,
     sales.bbl
-FROM {{ ref('nyc_sales_jan_feb_2019') }} sales
+FROM {{ ref('b_nyc_sales_jan_feb_2019') }} sales
 JOIN read_postgres(  
     'postgresql://demo:demo@pg.demo.glaredb.com:5432/postgres',
     'public',
