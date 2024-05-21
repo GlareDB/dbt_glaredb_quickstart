@@ -135,10 +135,10 @@ models:
   - name: b_nyc_sales_jan_feb_2019
     description: ""
     columns: []
-  - name: c_nyc_sales_with_read_postgres
+  - name: c1_nyc_sales_with_read_postgres
     description: ""
     columns: []
-  - name: c_nyc_sales_with_external_db_postgres
+  - name: c2_nyc_sales_with_external_db_postgres
     description: ""
     columns: []
   
